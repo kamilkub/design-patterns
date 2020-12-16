@@ -11,3 +11,11 @@ The Builder design pattern solves problems like:
 
 Source: wikipedia.org
 
+### Singleton Designer Pattern
+Singleton is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
+
+The Builder design pattern solves problems like:
+* One instance of a class through entire application lifecycle
+* Global access to class without overriding by other threads
+
+
