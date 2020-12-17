@@ -3,11 +3,13 @@ package pl.designs_test;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pl.designs.adapter.RoundHole;
+import pl.designs.adapter.SquarePeg;
+import pl.designs.adapter.SquarePegAdapter;
 import pl.designs.builder.BuilderPattern;
 import pl.designs.singleton.SingletonPattern;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DesignPatternTest {
 
@@ -37,6 +39,23 @@ public class DesignPatternTest {
         SingletonPattern pattern2 = SingletonPattern.getInstance();
 
         assertEquals(pattern2, pattern);
+
+    }
+
+    @Test
+    @DisplayName("#3 Testing Adapter design pattern")
+    void testAdapterDesignPattern() {
+        RoundHole hole = new RoundHole(5);
+
+        SquarePeg smallSqPeg = new SquarePeg(5);
+        SquarePeg bigSqPeg = new SquarePeg(10);
+
+        SquarePegAdapter smallAdapter = new SquarePegAdapter(smallSqPeg);
+        SquarePegAdapter bigAdapter = new SquarePegAdapter(bigSqPeg);
+
+        assertTrue(hole.fits(smallAdapter));
+        assertFalse(hole.fits(bigAdapter));
+
 
     }
 
