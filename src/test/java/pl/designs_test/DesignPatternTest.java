@@ -6,6 +6,10 @@ import org.junit.jupiter.api.Test;
 import pl.designs.adapter.RoundHole;
 import pl.designs.adapter.SquarePeg;
 import pl.designs.adapter.SquarePegAdapter;
+import pl.designs.bridge.Animal;
+import pl.designs.bridge.BaseMammal;
+import pl.designs.bridge.Lion;
+import pl.designs.bridge.PredatorMammal;
 import pl.designs.builder.BuilderPattern;
 import pl.designs.singleton.SingletonPattern;
 
@@ -57,6 +61,19 @@ public class DesignPatternTest {
         assertFalse(hole.fits(bigAdapter));
 
 
+    }
+
+    @Test
+    @DisplayName("#4 Testing Bridge design pattern")
+    void testBridgeDesignPattern(){
+        Animal lion = new Lion();
+
+        BaseMammal smallLion = new BaseMammal(lion);
+        assertFalse(smallLion.canWalk());
+        assertFalse(smallLion.canHunt());
+        PredatorMammal bigLion = new PredatorMammal(lion);
+        assertTrue(bigLion.canHunt());
+        assertTrue(bigLion.canWalk());
     }
 
 }

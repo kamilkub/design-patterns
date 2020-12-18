@@ -26,3 +26,13 @@ The Adapter design pattern solves problems like:
 
 
 Source: refacturing.guru
+
+
+### Bridge Design Pattern
+Bridge is a structural design pattern that divides business logic or huge class into separate class hierarchies that can be developed independently.
+
+The Bridge design pattern solves problems and has advantages such as:
+* How make an interface cross-platform supportive?
+* Easily extendable
+
+Source: refacturing.guru
