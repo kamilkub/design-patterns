@@ -36,3 +36,14 @@ The Bridge design pattern solves problems and has advantages such as:
 * Easily extendable
 
 Source: refacturing.guru
+
+### Proxy Design Pattern
+Proxy is a structural design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
+
+The Proxy design pattern solves problems and has advantages such as:
+* How to minimize memory usage caused from big services
+* Ability to do something before request reaches the server
+* Having control over object without clients knowing it
+* Works even when API or service object is not available at the moment
+
+Source: refacturing.guru
