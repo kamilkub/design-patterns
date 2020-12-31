@@ -11,6 +11,10 @@ import pl.designs.bridge.BaseMammal;
 import pl.designs.bridge.Lion;
 import pl.designs.bridge.PredatorMammal;
 import pl.designs.builder.BuilderPattern;
+import pl.designs.proxy.CachedYoutube;
+import pl.designs.proxy.ThirdPartyYoutubeLib;
+import pl.designs.proxy.YoutubeManager;
+import pl.designs.proxy.YoutubeThirdParty;
 import pl.designs.singleton.SingletonPattern;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -74,6 +78,20 @@ public class DesignPatternTest {
         PredatorMammal bigLion = new PredatorMammal(lion);
         assertTrue(bigLion.canHunt());
         assertTrue(bigLion.canWalk());
+    }
+
+    @Test
+    @DisplayName("#5 Testing Proxy design pattern")
+    void testProxyDesignPattern(){
+        ThirdPartyYoutubeLib apiProxy = new YoutubeThirdParty();
+        ThirdPartyYoutubeLib cachingClass = new CachedYoutube(apiProxy);
+        YoutubeManager mainServiceClass = new YoutubeManager(cachingClass);
+
+
+        assertEquals(1, mainServiceClass.renderVideosPanel().size());
+        assertEquals("asd", mainServiceClass.renderVideoPage("asd").getVideoId());
+
+
     }
 
 }
