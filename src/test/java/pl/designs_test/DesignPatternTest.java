@@ -3,19 +3,19 @@ package pl.designs_test;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pl.designs.adapter.RoundHole;
-import pl.designs.adapter.SquarePeg;
-import pl.designs.adapter.SquarePegAdapter;
-import pl.designs.bridge.Animal;
-import pl.designs.bridge.BaseMammal;
-import pl.designs.bridge.Lion;
-import pl.designs.bridge.PredatorMammal;
-import pl.designs.builder.BuilderPattern;
-import pl.designs.proxy.CachedYoutube;
-import pl.designs.proxy.ThirdPartyYoutubeLib;
-import pl.designs.proxy.YoutubeManager;
-import pl.designs.proxy.YoutubeThirdParty;
-import pl.designs.singleton.SingletonPattern;
+import pl.designs.structural.adapter.RoundHole;
+import pl.designs.structural.adapter.SquarePeg;
+import pl.designs.structural.adapter.SquarePegAdapter;
+import pl.designs.structural.bridge.Animal;
+import pl.designs.structural.bridge.BaseMammal;
+import pl.designs.structural.bridge.Lion;
+import pl.designs.structural.bridge.PredatorMammal;
+import pl.designs.creational.builder.BuilderPattern;
+import pl.designs.structural.proxy.CachedYoutube;
+import pl.designs.structural.proxy.ThirdPartyYoutubeLib;
+import pl.designs.structural.proxy.YoutubeManager;
+import pl.designs.structural.proxy.YoutubeThirdParty;
+import pl.designs.creational.singleton.SingletonPattern;
 
 import static org.junit.jupiter.api.Assertions.*;
 

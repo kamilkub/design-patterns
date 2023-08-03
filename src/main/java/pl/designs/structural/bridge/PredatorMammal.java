@@ -1,4 +1,4 @@
-package pl.designs.bridge;
+package pl.designs.structural.bridge;
 
 public class PredatorMammal extends BaseMammal {
 

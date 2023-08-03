@@ -1,4 +1,4 @@
-package pl.designs.adapter;
+package pl.designs.structural.adapter;
 
 public class RoundHole {
 

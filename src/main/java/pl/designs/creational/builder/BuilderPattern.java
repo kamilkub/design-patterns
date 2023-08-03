@@ -1,4 +1,4 @@
-package pl.designs.builder;
+package pl.designs.creational.builder;
 
 public class BuilderPattern {
 

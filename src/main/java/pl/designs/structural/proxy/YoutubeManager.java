@@ -1,4 +1,4 @@
-package pl.designs.proxy;
+package pl.designs.structural.proxy;
 
 import java.util.List;
 
