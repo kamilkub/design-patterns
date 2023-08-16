@@ -1,6 +1,6 @@
 package pl.designs.structural.adapter;
 
-public class SquarePegAdapter extends RoundPeg {
+public class SquarePegAdapter implements Radius {
 
     private SquarePeg peg;
 
@@ -8,6 +8,7 @@ public class SquarePegAdapter extends RoundPeg {
         this.peg = peg;
     }
 
+    @Override
     public int getRadius(){
         return (int) (peg.getWidth() * Math.sqrt(2) / 2);
     }

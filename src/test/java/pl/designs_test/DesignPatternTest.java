@@ -15,7 +15,7 @@ import pl.designs.structural.proxy.CachedYoutube;
 import pl.designs.structural.proxy.ThirdPartyYoutubeLib;
 import pl.designs.structural.proxy.YoutubeManager;
 import pl.designs.structural.proxy.YoutubeThirdParty;
-import pl.designs.creational.singleton.SingletonPattern;
+import pl.designs.creational.singleton.EagerSingletonPattern;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,7 +31,10 @@ public class DesignPatternTest {
         assertNull(pattern.getId());
         assertNull(pattern.getName());
 
-        pattern = new BuilderPattern.Builder().id(1L).name("testName").build();
+        pattern = new BuilderPattern.Builder()
+                .id(1L)
+                .name("testName")
+                .build();
 
 
         assertEquals( 1L, pattern.getId());
@@ -43,8 +46,8 @@ public class DesignPatternTest {
     @Test
     @DisplayName("#2 Testing Singleton design pattern")
     void testSingletonPattern(){
-        SingletonPattern pattern = SingletonPattern.getInstance();
-        SingletonPattern pattern2 = SingletonPattern.getInstance();
+        EagerSingletonPattern pattern = EagerSingletonPattern.getInstance();
+        EagerSingletonPattern pattern2 = EagerSingletonPattern.getInstance();
 
         assertEquals(pattern2, pattern);
 
@@ -90,8 +93,6 @@ public class DesignPatternTest {
 
         assertEquals(1, mainServiceClass.renderVideosPanel().size());
         assertEquals("asd", mainServiceClass.renderVideoPage("asd").getVideoId());
-
-
     }
 
 }

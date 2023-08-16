@@ -1,6 +1,6 @@
 package pl.designs.structural.adapter;
 
-public class RoundHole {
+public class RoundHole implements Radius {
 
     private int radius;
 
@@ -9,6 +9,7 @@ public class RoundHole {
         this.radius = radius;
     }
 
+    @Override
     public int getRadius() {
         return radius;
     }

@@ -1,6 +1,6 @@
 package pl.designs.structural.adapter;
 
-public class RoundPeg {
+public class RoundPeg implements Radius {
 
     private int radius;
 
@@ -11,6 +11,7 @@ public class RoundPeg {
         this.radius = radius;
     }
 
+    @Override
     public int getRadius() {
         return radius;
     }
