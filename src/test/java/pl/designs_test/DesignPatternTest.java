@@ -7,10 +7,6 @@ import pl.designs.structural.adapter.RoundHole;
 import pl.designs.structural.adapter.SquarePeg;
 import pl.designs.structural.adapter.SquarePegAdapter;
 import pl.designs.creational.builder.BuilderPattern;
-import pl.designs.structural.proxy.CachedYoutube;
-import pl.designs.structural.proxy.ThirdPartyYoutubeLib;
-import pl.designs.structural.proxy.YoutubeManager;
-import pl.designs.structural.proxy.YoutubeThirdParty;
 import pl.designs.creational.singleton.EagerSingletonPattern;
 
 import static org.junit.jupiter.api.Assertions.*;
