@@ -1,7 +1,7 @@
 package pl.designs.behavioral.interpreter;
 
 
-import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 

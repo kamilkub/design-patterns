@@ -5,7 +5,6 @@ import pl.designs.structural.proxy.Image;
 import java.awt.geom.Point2D;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
 public class ImageInvocationHandler implements InvocationHandler {
     @Override

@@ -7,11 +7,11 @@ import pl.designs.behavioral.iterator.Iterator;
 import pl.designs.behavioral.iterator.ThemeColor;
 import pl.designs.behavioral.observer.Order;
 import pl.designs.behavioral.observer.OrderObserver;
+import pl.designs.creational.builder.BuilderPattern;
+import pl.designs.creational.singleton.EagerSingletonPattern;
 import pl.designs.structural.adapter.RoundHole;
 import pl.designs.structural.adapter.SquarePeg;
 import pl.designs.structural.adapter.SquarePegAdapter;
-import pl.designs.creational.builder.BuilderPattern;
-import pl.designs.creational.singleton.EagerSingletonPattern;
 
 import java.util.UUID;
 
