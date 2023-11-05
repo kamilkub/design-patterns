@@ -3,11 +3,17 @@ package pl.designs_test;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pl.designs.behavioral.iterator.Iterator;
+import pl.designs.behavioral.iterator.ThemeColor;
+import pl.designs.behavioral.observer.Order;
+import pl.designs.behavioral.observer.OrderObserver;
 import pl.designs.structural.adapter.RoundHole;
 import pl.designs.structural.adapter.SquarePeg;
 import pl.designs.structural.adapter.SquarePegAdapter;
 import pl.designs.creational.builder.BuilderPattern;
 import pl.designs.creational.singleton.EagerSingletonPattern;
+
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -58,33 +64,47 @@ public class DesignPatternTest {
 
         assertTrue(hole.fits(smallAdapter));
         assertFalse(hole.fits(bigAdapter));
-
-
     }
 
     @Test
-    @DisplayName("#4 Testing Bridge design pattern")
-    void testBridgeDesignPattern(){
-        Animal lion = new Lion();
+    @DisplayName("#3 Testing Iterator design pattern")
+    void testIteratorDesignPattern() {
+        assertEquals(4, ThemeColor.values().length);
+        assertNotNull(ThemeColor.getIterator());
 
-        BaseMammal smallLion = new BaseMammal(lion);
-        assertFalse(smallLion.canWalk());
-        assertFalse(smallLion.canHunt());
-        PredatorMammal bigLion = new PredatorMammal(lion);
-        assertTrue(bigLion.canHunt());
-        assertTrue(bigLion.canWalk());
+        Iterator<ThemeColor> iterator = ThemeColor.getIterator();
+
+        assertNotNull(iterator.next());
+        assertNotNull(iterator.next());
+        assertNotNull(iterator.next());
+        assertNotNull(iterator.next());
+        assertThrows(ArrayIndexOutOfBoundsException.class, iterator::next);
     }
 
     @Test
-    @DisplayName("#5 Testing Proxy design pattern")
-    void testProxyDesignPattern(){
-        ThirdPartyYoutubeLib apiProxy = new YoutubeThirdParty();
-        ThirdPartyYoutubeLib cachingClass = new CachedYoutube(apiProxy);
-        YoutubeManager mainServiceClass = new YoutubeManager(cachingClass);
+    @DisplayName("#3 Testing Observer design pattern")
+    void testObserverDesignPattern() {
+        // given
+        Order order = new Order(UUID.randomUUID().toString());
 
 
-        assertEquals(1, mainServiceClass.renderVideosPanel().size());
-        assertEquals("asd", mainServiceClass.renderVideoPage("asd").getVideoId());
+        // when
+        order.attach(new OrderObserver());
+
+        //then
+        order.addItem(50);
+        assertEquals(0, order.getDiscount());
+
+        order.addItem(50);
+        assertEquals(0, order.getDiscount());
+
+        order.addItem(50);
+        assertEquals(0, order.getDiscount());
+
+        order.addItem(50);
+        assertEquals(50, order.getDiscount());
+
+
     }
 
 }

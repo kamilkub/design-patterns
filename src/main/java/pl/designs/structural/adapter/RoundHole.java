@@ -14,7 +14,7 @@ public class RoundHole implements Radius {
         return radius;
     }
 
-    public boolean fits(RoundPeg peg){
+    public boolean fits(Radius peg){
         return this.getRadius() >= peg.getRadius();
     }
 }
