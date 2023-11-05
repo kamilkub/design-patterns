@@ -7,6 +7,7 @@ import pl.designs.behavioral.iterator.Iterator;
 import pl.designs.behavioral.iterator.ThemeColor;
 import pl.designs.behavioral.observer.Order;
 import pl.designs.behavioral.observer.OrderObserver;
+import pl.designs.behavioral.state.*;
 import pl.designs.creational.builder.BuilderPattern;
 import pl.designs.creational.singleton.EagerSingletonPattern;
 import pl.designs.structural.adapter.RoundHole;
@@ -105,6 +106,30 @@ public class DesignPatternTest {
         assertEquals(50, order.getDiscount());
 
 
+    }
+
+    @Test
+    @DisplayName("#3 Testing State design pattern")
+    void testStateDesignPattern() {
+        // given
+        pl.designs.behavioral.state.Order order = new pl.designs.behavioral.state.Order();
+
+        // then
+        assertTrue(order.getState() instanceof New);
+
+        order.paymentSuccessful();
+        assertTrue(order.getState() instanceof Paid);
+
+        order.dispatched();
+        assertTrue(order.getState() instanceof InTransit);
+
+        order.delivered();
+        assertTrue(order.getState() instanceof Delivered);
+
+        order.cancel();
+        assertTrue(order.getState() instanceof Cancelled);
+
+        assertThrows(IllegalStateException.class, order::cancel);
     }
 
 }
